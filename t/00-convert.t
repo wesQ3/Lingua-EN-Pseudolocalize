@@ -2,7 +2,6 @@ use strict;
 use Test::Simple tests => 2;
 
 use Lingua::EN::Pseudolocalize qw( convert deconvert );
-use Devel::Dwarn;
 
 my $a_z = 'abcdefghijklmnopqrstuvwxyz th ts st';
 
