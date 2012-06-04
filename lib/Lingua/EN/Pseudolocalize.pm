@@ -10,10 +10,11 @@ my $lookup = {
    'ts' => "\N{LATIN SMALL LETTER TS DIGRAPH}",
    'st' => "\N{LATIN SMALL LIGATURE ST}",
    'a' =>  "\N{LATIN SMALL LETTER A WITH HOOK ABOVE}",
+   'b' =>  "\N{LATIN SMALL LETTER B WITH MIDDLE TILDE}",
    'd' =>  "\N{LATIN SMALL LETTER D WITH CURL}",
    'e' =>  "\N{LATIN SMALL LETTER E WITH INVERTED BREVE}",
    'i' =>  "\N{LATIN SMALL LETTER I WITH DIAERESIS AND ACUTE}",
-   'o' =>  "\N{LATIN SMALL LETTER O WITH DOT ABOVE AND MACRON}",
+   'o' =>  "\N{LATIN SMALL LETTER O WITH DOT ABOVE}",
    'u' =>  "\N{LATIN SMALL LETTER U WITH HORN AND HOOK ABOVE}",
    'A' =>  "\N{LATIN CAPITAL LETTER A WITH RING BELOW}",
    'E' =>  "\N{LATIN CAPITAL LETTER E WITH TILDE BELOW}",
@@ -30,11 +31,15 @@ my $lookup = {
 };
 
 sub convert {
-   $_[0] =~ s/$_/$lookup->{$_}/g for keys %$lookup;
+   my $str = shift;
+   $str =~ s/$_/$lookup->{$_}/g for keys %$lookup;
+   return $str
 }
 
 sub deconvert {
-   $_[0] =~ s/$lookup->{$_}/$_/g for keys %$lookup;
+   my $str = shift;
+   $str =~ s/$lookup->{$_}/$_/g for keys %$lookup;
+   return $str
 }
 
 1;
