@@ -14,7 +14,7 @@ my $template = '<html><body>
 <h1>Pseudolocalize!</h1>
 <form action="/" method="POST">
 <textarea name="text" rows="10" cols="30">
-[% text %]
+[% og_text %]
 </textarea>
 <input type="submit" value="Convert" />
 </form>
@@ -35,7 +35,10 @@ builder {
       my $req = Plack::Request->new(shift);
       my $str = $req->param('text') || $test_string;
       my $body;
-      Template->new->process(\$template, { text => convert $str }, \$body);
+      Template->new->process(\$template, {
+         og_text => $str,
+         text => convert $str,
+      }, \$body);
 
       my $res = $req->new_response(200);
       $res->content_type('text/html; charset=utf-8');
