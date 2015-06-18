@@ -1,5 +1,5 @@
 package Lingua::EN::Pseudolocalize;
-use strict; use warnings;
+use strict; use warnings; use 5.008;
 use Sub::Exporter::Simple qw/convert deconvert/;
 use charnames ':full';
 
