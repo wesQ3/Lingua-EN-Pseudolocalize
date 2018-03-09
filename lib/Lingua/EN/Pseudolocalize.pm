@@ -138,20 +138,6 @@ sub deconvert {
 
 1;
 
-__END__
-
-=pod
-
-=encoding UTF-8
-
-=head1 NAME
-
-Lingua::EN::Pseudolocalize - Test Unicode support by pretending to speak a different language.
-
-=head1 VERSION
-
-version 0.004
-
 =head1 SYNOPSIS
 
     use Lingua::EN::Pseudolocalize qw( convert deconvert );
@@ -188,15 +174,3 @@ Returns: the converted string
 
 =back
 
-=head1 AUTHOR
-
-Wes Malone <wesm@cpan.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2015 by Wes Malone <wesm@cpan.org>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
