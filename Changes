@@ -1,0 +1,4 @@
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
+ - Randomize substitutions from a list (Gene Boggs)
